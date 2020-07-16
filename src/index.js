@@ -15,17 +15,37 @@ import './index.css';
 //   <li>Lomon Tea</li>
 // </ul>
 //  );
- let city={
-   name:"Kathmandu",
-   country:"Nepal"
- };
 
- ReactDOM.render(
-   <h1 id="heading" className="cool-text">
-     {city.name} is in {city.country}
-   </h1>,
-   document.getElementById("root")
+// JSX
+//  let city={
+//    name:"Kathmandu",
+//    country:"Nepal"
+//  };
 
- );
+//  ReactDOM.render(
+//    <h1 id="heading" className="cool-text">
+//      {city.name} is in {city.country}
+//    </h1>,
+//    document.getElementById("root")
+
+//  );
+
+
+// Componets 
+
+function Hello(){ //Should be always capital
+  return(
+    <div>
+      <h1>Welcome to React !</h1>
+      <p>Let's build something cool.</p>
+    </div>
+  );
+
+}
+
+ReactDOM.render(
+  <Hello/>,
+  document.getElementById("root")
+);
  
 //  Use babaljs to see the componets

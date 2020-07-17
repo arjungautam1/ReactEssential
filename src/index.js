@@ -48,7 +48,7 @@ import './index.css';
 //   <Hello/>,
 //   document.getElementById("root")
 // );
- 
+
 
 // Properties
 
@@ -75,23 +75,299 @@ import './index.css';
 
 // Properties in more cleaner way
 
-function Hello({library,message,number})
-{
-  
-  return(
-    <div>
-      <h1>Welcome to {library} World !</h1>
-      <p>{message}</p>
-      <p>{number} Total props</p>
-    </div>
-  );
+// function Hello({library,message,number})
+// {
+
+//   return(
+//     <div>
+//       <h1>Welcome to {library} World !</h1>
+//       <p>{message}</p>
+//       <p>{number} Total props</p>
+//     </div>
+//   );
+// }
+
+// ReactDOM.render(
+//   <Hello
+//   library="React"
+//   message="Have Fun !"
+//   number={3}
+//   />,
+//   document.getElementById("root")
+// );
+
+
+// Composing Compoents
+
+
+// function Lake({name})
+// {
+//   return <h1>{name}</h1>;
+// }
+// function App(){
+//   return(
+//     <div>
+//       <Lake name="Tilicho Lake"/>
+//       <Lake name="Fewa Lake"/>
+//       <Lake name="Rara Lake"/>
+//     </div>
+//   );
+// }
+
+// ReactDOM.render
+//   (
+//   <App/>,
+//   document.getElementById("root")
+//   );
+
+
+
+// Rendering Lists
+
+// const lakeList=[
+//   "Rara Lake",
+//   "Fewa Lake",
+//   "Tilicho Lake"
+// ];
+
+// function App(props)
+// {
+//   return (
+//    <ul>
+//      {props.lakes.map(lake=> (
+
+//      <li>{lake}</li>
+//       )) }
+//    </ul>
+
+//  );
+// }
+
+// ReactDOM.render
+// (
+//   <App lakes={lakeList}/>,
+
+//   document.getElementById("root")
+// );
+
+
+// Destructuring the above code 
+
+// const lakeList=[
+//   "Rara Lake",
+//   "Fewa Lake",
+//   "Tilicho Lake"
+// ];
+
+// function App({lakes})
+// {
+//   return (
+//    <ul>
+//      {lakes.map(lake=> (
+
+//      <li>{lake}</li>
+//       )) }
+//    </ul>
+
+//  );
+// }
+
+// ReactDOM.render
+// (
+//   <App lakes={lakeList}/>,
+
+//   document.getElementById("root")
+// );
+
+
+
+// Rendering the list of objects 
+
+
+// const lakeList=[
+//   {id:"1",name:"Rara Lake", place:"Mugu"},
+//   {id:"2",name:"Phewa Lake",place:"Pokhara"},
+//   {id:"3", name:"Tilicho Lake", place:"Manang"}
+// ];
+
+// function App({lakes})
+// {
+//   return(
+//     <div>
+//       {lakes.map(lake=>(
+//         <div>
+
+//           <h2>{lake.id} - {lake.name}</h2>
+//           <p>Location :{lake.place}</p>
+
+//           </div>
+//       ))}
+//     </div>
+//   )
+// }
+
+
+// ReactDOM.render(
+//   <App lakes={lakeList}/>,
+//   document.getElementById("root")
+// )
+
+
+// Error in console
+
+// Warning: Each child in a list should have a unique "key" prop.
+
+
+
+// Adding keys
+
+// const lakeList = [
+//   { id: "1", name: "Rara Lake", place: "Mugu" },
+//   { id: "2", name: "Phewa Lake", place: "Pokhara" },
+//   { id: "3", name: "Tilicho Lake", place: "Manang" }
+// ];
+
+// function App({ lakes }) {
+//   return (
+//     <div>
+//       {lakes.map(lake => (
+//         <div key={lake.id}>
+
+//           <h2>{lake.id} - {lake.name}</h2>
+//           <p>Location :{lake.place}</p>
+
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+
+// ReactDOM.render(
+//   <App lakes={lakeList} />,
+//   document.getElementById("root")
+// )
+
+
+// https://reactjs.org/docs/lists-and-keys.html#keys
+
+
+// const list=[1,2,3,4,5];
+
+// function App({items})
+// {
+//   return (
+//     <ul>
+//       {
+//         items.map(itemkey =>(
+//           <li key={itemkey.toString()}>{itemkey}</li>
+//         ))
+//       }
+//     </ul>
+//   )
+// }
+
+
+// ReactDOM.render(
+//   <App items={list} />,
+//   document.getElementById("root")
+// )
+
+
+// Conditional Rendering 
+
+
+// function Budi()
+// {
+//   return(
+//     <div>
+//       <h1>Message me Today !</h1>
+//     </div>
+//   );
+// }
+
+// function OffendedBudi()
+// {
+//   return(
+//     <div>
+//       <h1>Message me Tuesday !</h1>
+//     </div>
+//   );
+// }
+
+// function App(props)
+// {
+//   if(props.love==="yes")
+//   {
+//     return <Budi />;
+//   }
+//   else if(props.love==="no")
+//   {
+//     return <OffendedBudi/>;
+//   }
+// }
+
+
+// ReactDOM.render(
+//   <App love="no"/>,
+//   document.getElementById("root")
+// );
+
+
+// Conditional Rendering
+
+
+// function Budi({day})
+// {
+//   return(
+//     <div>
+//       <h1>Message me {day} !</h1>
+//     </div>
+//   );
+// }
+
+// function OffendedBudi({day})
+// {
+//   return(
+//     <div>
+//       <h1>Message me {day} !</h1>
+//     </div>
+//   );
+// }
+
+// function App(props)
+// {
+//   if(props.love==="yes")
+//   {
+//     return <Budi day="Today" />;
+//   }
+//   else if(props.love==="no")
+//   {
+//     return <OffendedBudi day="Tuesday" />;
+//   }
+// }
+
+
+// ReactDOM.render(
+//   <App love="no"/>,
+//   document.getElementById("root")
+// );
+
+
+function Budi(){
+  return <h1>She is on fire Today !</h1>;
+}
+
+function OffendedBudi(){
+  return <h1> She posted story in Instagram .!</h1>
 }
 
 ReactDOM.render(
-  <Hello
-  library="React"
-  message="Have Fun !"
-  number={3}
-  />,
+
+  // This tag <> is known as fragment tag
+  <>     
+<Budi /> <OffendedBudi />
+  </>,
   document.getElementById("root")
 );

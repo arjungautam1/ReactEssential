@@ -355,19 +355,45 @@ import './index.css';
 // );
 
 
-function Budi(){
-  return <h1>She is on fire Today !</h1>;
-}
+// React Fragments
 
-function OffendedBudi(){
-  return <h1> She posted story in Instagram .!</h1>
-}
+// function Budi() {
+//   return <h1>She is on fire Today !</h1>;
+// }
 
-ReactDOM.render(
+// function OffendedBudi() {
+//   return <h1> She posted story in Instagram .!</h1>
+// }
 
-  // This tag <> is known as fragment tag
-  <>     
-<Budi /> <OffendedBudi />
-  </>,
-  document.getElementById("root")
-);
+// ReactDOM.render(
+
+//   // This tag <> is known as fragment tag
+//   <>
+//     <Budi /> <OffendedBudi />
+//   </>,
+//   document.getElementById("root")
+// );
+
+// Array destructuring
+
+// const [first,sec,third]=[
+//   "MoMo",
+//   "Pizza",
+//   "Burger"
+// ];
+
+// console.log(first);
+// console.log(sec);
+// console.log(third);
+
+
+// Also
+
+// const [, ,third]=[
+//   "MoMo",
+//   "Pizza",
+//   "Burger"
+// ];
+
+// console.log(third);
+

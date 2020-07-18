@@ -1,6 +1,7 @@
-import React, { useState ,useEffect } from 'react';
+ import React, { useState ,useEffect ,useReducer} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 /*
 ReactDOM.render(
  React.createElement("h1",{style:{color:"blue"}},"Hello!"),
@@ -374,7 +375,7 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-Array destructuring
+// Array destructuring
 
 const [first,sec,third]=[
   "MoMo",
@@ -499,13 +500,13 @@ function Checkbox() {
 ReactDOM.render(
   <Checkbox />,
   document.getElementById("root")
-); */
+); 
 
 
 // The use effect Dependency Array 
 
 
-/* 
+
 
 function App()
 {
@@ -547,7 +548,7 @@ function App()
 ReactDOM.render(
   <App />,
   document.getElementById("root")
-); */
+); 
 
 
 
@@ -590,3 +591,86 @@ ReactDOM.render(
   <App/>,
   document.getElementById("root")
 );
+
+
+
+// Using useReducer      Below reducing the given code (see next comment)
+
+
+function CheckBox(){
+
+  const [Checked ,setChecked]=useState(false);
+
+  function toggle(){
+    setChecked(Checked=>!Checked);
+  }
+  
+
+return(
+  <>
+
+  <input
+
+  type="Checkbox"
+  value={Checked}
+  onChange={toggle }
+  />
+  {Checked ?"checked":"not checked"}
+
+
+  </>
+);
+
+
+
+}
+
+ReactDOM.render(
+  <CheckBox/>,
+  document.getElementById("root")
+);
+
+*/
+
+
+// When useStates get complex we use useReducer as below 
+
+function CheckBox(){
+
+  const [Checked ,toggle]=useReducer(
+    Checked=> !Checked,
+    false
+  );
+
+  // function toggle(){
+  //   setChecked(Checked=>!Checked);
+  // }
+  
+
+return(
+  <>
+
+  <input
+
+  type="Checkbox"
+  value={Checked}
+  onChange={toggle }
+  />
+  {Checked ?"checked":"not checked"}
+
+
+  </>
+);
+
+
+
+}
+
+ReactDOM.render(
+  <CheckBox/>,
+  document.getElementById("root")
+);
+
+
+
+ 

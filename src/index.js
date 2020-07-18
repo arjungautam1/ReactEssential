@@ -1,8 +1,8 @@
- import React, { useState ,useEffect ,useReducer} from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-/*
+
 ReactDOM.render(
  React.createElement("h1",{style:{color:"blue"}},"Hello!"),
   document.getElementById('root')
@@ -220,7 +220,7 @@ ReactDOM.render(
 
 
 
-Adding keys
+// Adding keys
 
 const lakeList = [
   { id: "1", name: "Rara Lake", place: "Mugu" },
@@ -630,47 +630,46 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-*/
+
 
 
 // When useStates get complex we use useReducer as below 
 
-function CheckBox(){
+function CheckBox() {
 
-  const [Checked ,toggle]=useReducer(
-    Checked=> !Checked,
+  const [Checked, toggle] = useReducer(
+    Checked => !Checked,
     false
   );
 
   // function toggle(){
   //   setChecked(Checked=>!Checked);
   // }
-  
-
-return(
-  <>
-
-  <input
-
-  type="Checkbox"
-  value={Checked}
-  onChange={toggle }
-  />
-  {Checked ?"checked":"not checked"}
 
 
-  </>
-);
+  return (
+    <>
+
+      <input
+
+        type="Checkbox"
+        value={Checked}
+        onChange={toggle}
+      />
+      {Checked ? "checked" : "not checked"}
+
+
+    </>
+  );
 
 
 
 }
 
 ReactDOM.render(
-  <CheckBox/>,
+  <CheckBox />,
   document.getElementById("root")
 );
 
 
 
- 

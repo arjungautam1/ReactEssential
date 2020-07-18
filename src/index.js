@@ -399,26 +399,79 @@ import './index.css';
 
 // Using Use State
 
+// function Budi() {
+//   const [status, setStatus] = useState("Meri Pyari Saani");
+//   return (
+//     <div>
+//       <h1>Meri Budi  :{status}</h1>
+
+//     <button onClick={()=>setStatus("Loves me alot .")}>
+//       Good Thing
+//     </button>
+
+//       <button onClick={() => setStatus("Her Anger .")} >
+//         Bad Thing
+//   </button>
+
+//   <button onClick={() =>setStatus("She cares me .")}>
+//     Best Thing
+//   </button>
+
+//     </div>
+//   );
+// }
+
+// ReactDOM.render(
+//   <Budi />,
+//   document.getElementById("root")
+// );
+
+
+// Using multiple use state
+
+
 function Budi() {
+  const [days, setDays] = useState(3);
+  const [reason, setReason] = useState("I am exited to Know 😇 ");
   const [status, setStatus] = useState("Meri Pyari Saani");
   return (
-    <div>
-      <h1>Meri Budi  :{status}</h1>
+    <>
+      <div>
 
-    <button onClick={()=>setStatus("Loves me alot .")}>
-      Good Thing
-    </button>
+        <h1>She has new reason for anger in every {days} days.</h1>
+        <button onClick={() => setDays(days + 3)}>
+          Days She take
+        </button>
 
-      <button onClick={() => setStatus("Her Anger .")} >
-        Bad Thing
-  </button>
+      </div>
 
-  <button onClick={() =>setStatus("She cares me .")}>
-    Best Thing
-  </button>
+      <div>
+        <h1>New reason to get her angry : {reason} </h1>
+        <button onClick={() => setReason("Even God doesn't know the reason 😂")}>
+          Let's find Reason 
+        </button>
+      </div>
 
-    </div>
+      <div>
+
+        <h1>Meri Budi  :{status}</h1>
+
+        <button onClick={() => setStatus("Loves me alot .")}>
+          Good Thing
+         </button>
+
+        <button onClick={() => setStatus("Her Anger .")} >
+          Bad Thing
+         </button>
+
+        <button onClick={() => setStatus("She cares me .")}>
+          Best Thing
+        </button>
+
+      </div>
+    </>
   );
+
 }
 
 ReactDOM.render(

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -397,3 +397,31 @@ import './index.css';
 
 // console.log(third);
 
+// Using Use State
+
+function Budi() {
+  const [status, setStatus] = useState("Meri Pyari Saani");
+  return (
+    <div>
+      <h1>Meri Budi  :{status}</h1>
+
+    <button onClick={()=>setStatus("Loves me alot .")}>
+      Good Thing
+    </button>
+
+      <button onClick={() => setStatus("Her Anger .")} >
+        Bad Thing
+  </button>
+
+  <button onClick={() =>setStatus("She cares me .")}>
+    Best Thing
+  </button>
+
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <Budi />,
+  document.getElementById("root")
+);

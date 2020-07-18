@@ -474,9 +474,10 @@ function Budi() {
 
 }
 
- */
+ 
 
 //  Working with Use effects 
+
 
 function Checkbox() {
   const [checked, setCheked] = useState(false);
@@ -497,5 +498,51 @@ function Checkbox() {
 
 ReactDOM.render(
   <Checkbox />,
+  document.getElementById("root")
+); */
+
+
+// The use effect Dependency Array 
+
+
+function App()
+{
+  const[val,setVal]=useState("");
+  const[val2,setVal2]=useState("");
+
+  useEffect(()=>{
+    console.log(`field 1:${val}`);
+  },[val]);  //dependency array
+
+  // Console maa eeuta matra field aauxa when we type the input 
+
+
+  useEffect(()=>{
+    console.log(`field 2:${val2}`);
+  },[val2]);  
+
+  return(
+    <>
+    <label>
+    Favorite Phrase:
+    <input value={val}
+    onChange={type=>setVal(type.target.value)}
+    />
+    </label>
+    <br/>
+
+    <label>
+      Second favorite phrase :
+      <input value={val2}
+      onChange={type=>setVal2(type.target.value)}
+      />
+    </label>
+    </>
+  )
+
+}
+
+ReactDOM.render(
+  <App />,
   document.getElementById("root")
 );

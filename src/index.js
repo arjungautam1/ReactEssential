@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 /*
@@ -475,3 +475,27 @@ function Budi() {
 }
 
  */
+
+//  Working with Use effects 
+
+function Checkbox() {
+  const [checked, setCheked] = useState(false);
+  useEffect(()=>{
+    alert(`checked : ${checked.toString()}`)
+  })
+  return (
+    <>
+      <input type="CheckBox"
+      value={checked}
+      onChange={()=> setCheked(checked => !checked)
+      }
+      />
+      {checked ? "checked" : "not checked"}
+    </>
+  );
+}
+
+ReactDOM.render(
+  <Checkbox />,
+  document.getElementById("root")
+);

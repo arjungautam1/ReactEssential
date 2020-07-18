@@ -505,6 +505,8 @@ ReactDOM.render(
 // The use effect Dependency Array 
 
 
+/* 
+
 function App()
 {
   const[val,setVal]=useState("");
@@ -544,5 +546,47 @@ function App()
 
 ReactDOM.render(
   <App />,
+  document.getElementById("root")
+); */
+
+
+
+// Fetching data with use effect  (GIT HUB)
+
+function GithubUser({login}){
+
+const [data,setData]=useState(null);
+useEffect(()=>{
+  fetch(`https://api.github.com/users/${login}`)
+  .then(res=>res.json())
+  .then(setData)
+  .catch(console.error);
+
+}, []);
+
+if(data)
+{
+  // return<div>{JSON.stringify(data)}</div>
+
+  return(
+  <div>
+    <h1>{data.login}</h1>
+    <img src={data.avatar_url} width={100}/>
+    
+  </div>
+  );
+}
+
+  return null;
+
+}
+
+function App()
+{
+  return <GithubUser login="arjun-sudo"/>
+}
+
+ReactDOM.render(
+  <App/>,
   document.getElementById("root")
 );
